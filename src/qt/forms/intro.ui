@@ -17,7 +17,8 @@
    <item>
     <widget class="QLabel" name="welcomeLabel">
      <property name="styleSheet">
-      <string notr="true">QLabel { font-style:italic; }</string>
+      <string notr="true">QLabel { font-style:italic; }
+color: rgb(0, 115, 255);</string>
      </property>
      <property name="text">
       <string>Welcome to %1.</string>
@@ -45,6 +46,9 @@
    </item>
    <item>
     <widget class="QLabel" name="storageLabel">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(59, 59, 60);</string>
+     </property>
      <property name="text">
       <string>As this is the first time the program is launched, you can choose where %1 will store its data.</string>
      </property>
@@ -55,6 +59,9 @@
    </item>
    <item>
     <widget class="QLabel" name="sizeWarningLabel">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(59, 59, 60);</string>
+     </property>
      <property name="text">
       <string>%1 will download and store a copy of the creativecoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</string>
      </property>
@@ -65,6 +72,9 @@
    </item>
    <item>
     <widget class="QRadioButton" name="dataDirDefault">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(128, 128, 128);</string>
+     </property>
      <property name="text">
       <string>Use the default data directory</string>
      </property>
@@ -72,6 +82,9 @@
    </item>
    <item>
     <widget class="QRadioButton" name="dataDirCustom">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(128, 128, 128);</string>
+     </property>
      <property name="text">
       <string>Use a custom data directory:</string>
      </property>

@@ -10,9 +10,15 @@
     <height>380</height>
    </rect>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="labelExplanation">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 115, 255);</string>
+     </property>
      <property name="textFormat">
       <enum>Qt::PlainText</enum>
      </property>

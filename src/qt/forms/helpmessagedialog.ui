@@ -10,6 +10,9 @@
     <height>400</height>
    </rect>
   </property>
+  <property name="styleSheet">
+   <string notr="true">selection-background-color: rgb(59, 59, 60);</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <property name="spacing">
     <number>0</number>
@@ -95,6 +98,14 @@
         <bool>true</bool>
        </property>
        <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>638</width>
+          <height>135</height>
+         </rect>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <widget class="QLabel" name="aboutMessage">

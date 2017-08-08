@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Send Coins</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,0,0">
    <property name="bottomMargin">
     <number>8</number>
@@ -84,7 +87,8 @@
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">font-weight:bold;</string>
+             <string notr="true">font-weight:bold;
+color: rgb(0, 115, 255);</string>
             </property>
             <property name="text">
              <string>Coin Control Features</string>
@@ -116,6 +120,9 @@
           </item>
           <item>
            <widget class="QLabel" name="labelCoinControlAutomaticallySelected">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(59, 59, 60);</string>
+            </property>
             <property name="text">
              <string>automatically selected</string>
             </property>
@@ -224,6 +231,9 @@
                    <bold>true</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(59, 59, 60);</string>
+                 </property>
                  <property name="text">
                   <string>Quantity:</string>
                  </property>
@@ -258,6 +268,9 @@
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(59, 59, 60);</string>
                  </property>
                  <property name="text">
                   <string>Bytes:</string>
@@ -307,6 +320,9 @@
                    <bold>true</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(59, 59, 60);</string>
+                 </property>
                  <property name="text">
                   <string>Amount:</string>
                  </property>
@@ -338,6 +354,9 @@
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(59, 59, 60);</string>
                  </property>
                  <property name="text">
                   <string>Priority:</string>
@@ -387,6 +406,9 @@
                    <bold>true</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(59, 59, 60);</string>
+                 </property>
                  <property name="text">
                   <string>Fee:</string>
                  </property>
@@ -418,6 +440,9 @@
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(59, 59, 60);</string>
                  </property>
                  <property name="text">
                   <string>Dust:</string>
@@ -467,6 +492,9 @@
                    <bold>true</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(59, 59, 60);</string>
+                 </property>
                  <property name="text">
                   <string>After Fee:</string>
                  </property>
@@ -498,6 +526,9 @@
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(59, 59, 60);</string>
                  </property>
                  <property name="text">
                   <string>Change:</string>
@@ -617,7 +648,7 @@
         <x>0</x>
         <y>0</y>
         <width>830</width>
-        <height>104</height>
+        <height>68</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
@@ -750,7 +781,8 @@
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">font-weight:bold;</string>
+                 <string notr="true">font-weight:bold;
+color: rgb(0, 115, 255);</string>
                 </property>
                 <property name="text">
                  <string>Transaction Fee:</string>
@@ -857,6 +889,9 @@
                    <property name="toolTip">
                     <string>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 satoshis in fee, while &quot;total at least&quot; pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</string>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(59, 59, 60);</string>
+                   </property>
                    <property name="text">
                     <string>per kilobyte</string>
                    </property>
@@ -872,6 +907,9 @@
                   <widget class="QRadioButton" name="radioCustomAtLeast">
                    <property name="toolTip">
                     <string>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 satoshis in fee, while &quot;total at least&quot; pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</string>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(59, 59, 60);</string>
                    </property>
                    <property name="text">
                     <string>total at least</string>
@@ -919,6 +957,9 @@
                    <property name="toolTip">
                     <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for creativecoin transactions than the network can process.</string>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(59, 59, 60);</string>
+                   </property>
                    <property name="text">
                     <string>(read the tooltip)</string>
                    </property>
@@ -948,6 +989,9 @@
               <layout class="QVBoxLayout" name="verticalLayoutFee4" stretch="0,1">
                <item>
                 <widget class="QRadioButton" name="radioSmartFee">
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(59, 59, 60);</string>
+                 </property>
                  <property name="text">
                   <string>Recommended:</string>
                  </property>
@@ -978,6 +1022,9 @@
               <layout class="QVBoxLayout" name="verticalLayoutFee9" stretch="0,1">
                <item>
                 <widget class="QRadioButton" name="radioCustomFee">
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(59, 59, 60);</string>
+                 </property>
                  <property name="text">
                   <string>Custom:</string>
                  </property>
@@ -1030,6 +1077,9 @@
                  </item>
                  <item>
                   <widget class="QLabel" name="labelSmartFee2">
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(59, 59, 60);</string>
+                   </property>
                    <property name="text">
                     <string>(Smart fee not initialized yet. This usually takes a few blocks...)</string>
                    </property>
@@ -1059,6 +1109,9 @@
                   <layout class="QVBoxLayout" name="verticalLayoutFee6">
                    <item>
                     <widget class="QLabel" name="labelSmartFee3">
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(59, 59, 60);</string>
+                     </property>
                      <property name="text">
                       <string>Confirmation time:</string>
                      </property>
@@ -1119,6 +1172,9 @@
                     <layout class="QHBoxLayout" name="horizontalLayoutFee10">
                      <item>
                       <widget class="QLabel" name="labelSmartFeeNormal">
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(59, 59, 60);</string>
+                       </property>
                        <property name="text">
                         <string>normal</string>
                        </property>
@@ -1139,6 +1195,9 @@
                      </item>
                      <item>
                       <widget class="QLabel" name="labelSmartFeeFast">
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(59, 59, 60);</string>
+                       </property>
                        <property name="text">
                         <string>fast</string>
                        </property>
@@ -1282,6 +1341,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 115, 255);</string>
+         </property>
          <property name="text">
           <string>Balance:</string>
          </property>
@@ -1295,8 +1357,16 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>13</pointsize>
+          </font>
+         </property>
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
          </property>
          <property name="text">
           <string notr="true">123.456 CREA</string>
@@ -1330,7 +1400,7 @@
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="groupFee"/>
   <buttongroup name="groupCustomFee"/>
+  <buttongroup name="groupFee"/>
  </buttongroups>
 </ui>

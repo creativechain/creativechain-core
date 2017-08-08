@@ -25,12 +25,18 @@
   <property name="windowTitle">
    <string>Passphrase Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="sizeConstraint">
     <enum>QLayout::SetMinimumSize</enum>
    </property>
    <item>
     <widget class="QLabel" name="warningLabel">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 115, 255);</string>
+     </property>
      <property name="text">
       <string notr="true">Placeholder text</string>
      </property>
@@ -52,6 +58,9 @@
      </property>
      <item row="0" column="0">
       <widget class="QLabel" name="passLabel1">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(59, 59, 60);</string>
+       </property>
        <property name="text">
         <string>Enter passphrase</string>
        </property>
@@ -66,6 +75,9 @@
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="passLabel2">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(59, 59, 60);</string>
+       </property>
        <property name="text">
         <string>New passphrase</string>
        </property>
@@ -80,6 +92,9 @@
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="passLabel3">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(59, 59, 60);</string>
+       </property>
        <property name="text">
         <string>Repeat new passphrase</string>
        </property>

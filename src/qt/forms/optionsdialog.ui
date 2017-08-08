@@ -19,6 +19,10 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 115, 255);</string>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -32,6 +36,9 @@
          <property name="toolTip">
           <string>Automatically start %1 after logging in to the system.</string>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 115, 255);</string>
+         </property>
          <property name="text">
           <string>&amp;Start %1 on system login</string>
          </property>
@@ -41,6 +48,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_2_Main">
          <item>
           <widget class="QLabel" name="databaseCacheLabel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>Size of &amp;database cache</string>
            </property>
@@ -53,10 +63,17 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="databaseCache"/>
+          <widget class="QSpinBox" name="databaseCache">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QLabel" name="databaseCacheUnitLabel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>MB</string>
            </property>
@@ -84,6 +101,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_3_Main">
          <item>
           <widget class="QLabel" name="threadsScriptVerifLabel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>Number of script &amp;verification threads</string>
            </property>
@@ -99,6 +119,9 @@
           <widget class="QSpinBox" name="threadsScriptVerif">
            <property name="toolTip">
             <string>(0 = auto, &lt;0 = leave that many cores free)</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
            </property>
           </widget>
          </item>
@@ -148,6 +171,9 @@
             <property name="toolTip">
              <string>Whether to show coin control features or not.</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(59, 59, 60);</string>
+            </property>
             <property name="text">
              <string>Enable coin &amp;control features</string>
             </property>
@@ -157,6 +183,9 @@
            <widget class="QCheckBox" name="spendZeroConfChange">
             <property name="toolTip">
              <string>If you disable the spending of unconfirmed change, the change from a transaction cannot be used until that transaction has at least one confirmation. This also affects how your balance is computed.</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(59, 59, 60);</string>
             </property>
             <property name="text">
              <string>&amp;Spend unconfirmed change</string>
@@ -191,6 +220,9 @@
          <property name="toolTip">
           <string>Automatically open the Creativecoin client port on the router. This only works when your router supports UPnP and it is enabled.</string>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
+         </property>
          <property name="text">
           <string>Map port using &amp;UPnP</string>
          </property>
@@ -200,6 +232,9 @@
         <widget class="QCheckBox" name="allowIncoming">
          <property name="toolTip">
           <string>Accept connections from outside</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
          </property>
          <property name="text">
           <string>Allow incoming connections</string>
@@ -211,6 +246,9 @@
          <property name="toolTip">
           <string>Connect to the Creativecoin network through a SOCKS5 proxy.</string>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
+         </property>
          <property name="text">
           <string>&amp;Connect through SOCKS5 proxy (default proxy):</string>
          </property>
@@ -220,6 +258,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_1_Network">
          <item>
           <widget class="QLabel" name="proxyIpLabel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>Proxy &amp;IP:</string>
            </property>
@@ -252,6 +293,9 @@
          </item>
          <item>
           <widget class="QLabel" name="proxyPortLabel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>&amp;Port:</string>
            </property>
@@ -301,6 +345,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_2_Network">
          <item>
           <widget class="QLabel" name="proxyActiveNets">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>Used for reaching peers via:</string>
            </property>
@@ -324,6 +371,9 @@
          </item>
          <item>
           <widget class="QLabel" name="proxyReachIPv4Label">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>IPv4</string>
            </property>
@@ -347,6 +397,9 @@
          </item>
          <item>
           <widget class="QLabel" name="proxyReachIPv6Label">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>IPv6</string>
            </property>
@@ -370,6 +423,9 @@
          </item>
          <item>
           <widget class="QLabel" name="proxyReachTorLabel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>Tor</string>
            </property>
@@ -398,6 +454,9 @@
          <property name="toolTip">
           <string>Connect to the Creativecoin network through a separate SOCKS5 proxy for Tor hidden services.</string>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
+         </property>
          <property name="text">
           <string>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</string>
          </property>
@@ -407,6 +466,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_3_Network">
          <item>
           <widget class="QLabel" name="proxyIpTorLabel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>Proxy &amp;IP:</string>
            </property>
@@ -439,6 +501,9 @@
          </item>
          <item>
           <widget class="QLabel" name="proxyPortTorLabel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>&amp;Port:</string>
            </property>
@@ -509,6 +574,9 @@
          <property name="toolTip">
           <string>&amp;Hide the icon from the system tray.</string>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
+         </property>
          <property name="text">
           <string>Hide tray icon</string>
          </property>
@@ -519,6 +587,9 @@
          <property name="toolTip">
           <string>Show only a tray icon after minimizing the window.</string>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
+         </property>
          <property name="text">
           <string>&amp;Minimize to the tray instead of the taskbar</string>
          </property>
@@ -528,6 +599,9 @@
         <widget class="QCheckBox" name="minimizeOnClose">
          <property name="toolTip">
           <string>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
          </property>
          <property name="text">
           <string>M&amp;inimize on close</string>
@@ -558,6 +632,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_1_Display">
          <item>
           <widget class="QLabel" name="langLabel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>User Interface &amp;language:</string>
            </property>
@@ -582,6 +659,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_2_Display">
          <item>
           <widget class="QLabel" name="unitLabel">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
+           </property>
            <property name="text">
             <string>&amp;Unit to show amounts in:</string>
            </property>
@@ -608,6 +688,9 @@
           <widget class="QLabel" name="thirdPartyTxUrlsLabel">
            <property name="toolTip">
             <string>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(59, 59, 60);</string>
            </property>
            <property name="text">
             <string>Third party transaction URLs</string>
@@ -650,6 +733,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout_Bottom">
         <item>
          <widget class="QLabel" name="overriddenByCommandLineInfoLabel">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(59, 59, 60);</string>
+          </property>
           <property name="text">
            <string>Active command-line options that override above options:</string>
           </property>
@@ -757,6 +843,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="okButton">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
         <string>&amp;OK</string>
        </property>

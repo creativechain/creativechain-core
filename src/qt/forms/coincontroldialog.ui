@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Coin Selection</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayoutTop" stretch="0,0,0,0">
@@ -44,6 +47,9 @@
            <bold>true</bold>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
+         </property>
          <property name="text">
           <string>Quantity:</string>
          </property>
@@ -72,6 +78,9 @@
            <weight>75</weight>
            <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
          </property>
          <property name="text">
           <string>Bytes:</string>
@@ -118,6 +127,9 @@
            <bold>true</bold>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color:rgb(59, 59, 60)</string>
+         </property>
          <property name="text">
           <string>Amount:</string>
          </property>
@@ -146,6 +158,9 @@
            <weight>75</weight>
            <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
          </property>
          <property name="text">
           <string>Priority:</string>
@@ -191,6 +206,9 @@
            <weight>75</weight>
            <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
          </property>
          <property name="text">
           <string>Fee:</string>
@@ -271,6 +289,9 @@
            <weight>75</weight>
            <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(59, 59, 60);</string>
          </property>
          <property name="text">
           <string>After Fee:</string>

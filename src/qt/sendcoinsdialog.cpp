@@ -45,6 +45,7 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
         ui->addButton->setIcon(QIcon());
         ui->clearButton->setIcon(QIcon());
         ui->sendButton->setIcon(QIcon());
+        ui->sendButton->setStyleSheet("background-color:#ffd952;");
     } else {
         ui->addButton->setIcon(platformStyle->SingleColorIcon(":/icons/add"));
         ui->clearButton->setIcon(platformStyle->SingleColorIcon(":/icons/remove"));
