@@ -858,6 +858,20 @@ void restoreWindowGeometry(const QString& strSetting, const QSize& defaultSize, 
     parent->resize(size);
     parent->move(pos);
 }
+QString loadStyleSheet()
+{
+    QString styleSheet;
+    QSettings settings;
+    QString cssName;
+    cssName = QString(":css/crea");
+    settings.setValue("theme", "crea");
+    QFile qFile(cssName);
+    if (qFile.open(QFile::ReadOnly))
+    {
+        styleSheet = QLatin1String(qFile.readAll());
+    }
+    return styleSheet;
+}
 
 void setClipboard(const QString& str)
 {

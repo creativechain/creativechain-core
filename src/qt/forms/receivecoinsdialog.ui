@@ -35,7 +35,7 @@ color: rgb(0, 115, 255);</string>
         <item>
          <widget class="QLabel" name="label_5">
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">color: rgb(59, 59, 60);</string>
           </property>
           <property name="text">
            <string>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</string>

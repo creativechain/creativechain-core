@@ -35,7 +35,7 @@
    <item>
     <widget class="QLabel" name="warningLabel">
      <property name="styleSheet">
-      <string notr="true">color: rgb(0, 115, 255);</string>
+      <string notr="true">color: rgb(59, 59, 60);</string>
      </property>
      <property name="text">
       <string notr="true">Placeholder text</string>
