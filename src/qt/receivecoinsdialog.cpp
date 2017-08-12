@@ -101,6 +101,7 @@ ReceiveCoinsDialog::~ReceiveCoinsDialog()
 void ReceiveCoinsDialog::clear()
 {
     ui->reqAmount->clear();
+    ui->reqLabel->setPlaceholderText(tr("Enter a label for this address to add it to your address book"));
     ui->reqLabel->setText("");
     ui->reqMessage->setText("");
     ui->reuseAddress->setChecked(false);

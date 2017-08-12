@@ -5,10 +5,15 @@ margin:0;
 padding-top:20px;
 padding-bottom: 20px;
 }
+windowTitle
+{
+    text-align: center;
+}
 QStatusBar
 {
     background-color: #d5d6d7;
     color: #808080;
+    height: 100px;    
 }
 QMenuBar
 {
@@ -21,7 +26,16 @@ QMenuBar::item
 }
 QMenu
 {
-    
+    background-color: #fff;
+    color: #3b3b3c;
+}
+QMenu::item
+{
+    color: #3b3b3c;
+}
+QMenu::item:selected
+{
+    background-color: #d5d6d7;
 }
 QToolBar
 {
@@ -34,16 +48,93 @@ QToolBar > QToolButton
 {
     background-color: #fff;
     border: 0px solid #333;
-    min-height: 40px;
-    min-width: 100px;
-    padding: 0px, 10px;
+    min-height: 30px;
+    min-width: 175px;
+    padding: 10px, 20px;
+    color: #3b3b3c;
+    font-size: 18px;
     text-align: center;
 }
 QToolBar > QToolButton:checked
 {
     background-color: #0073ff;
+    color: #efefef; 
+    font-weight: bold;
 }
 QMessageBox
 {
     background-color: #F8F6F6;
+}
+/********************************************/
+QLabel
+{
+    /*Texto base y color*/
+    color: #3b3b3c;
+}
+.QCheckBox 
+{ /* Checkbox Labels */
+    color:#3b3b3c;
+}
+
+.QCheckBox:hover
+{
+    color: #808080;
+}
+
+.QValidatedLineEdit, .QLineEdit 
+{ /* Text Entry Fields */
+    border: 0px solid #82C3E6;
+    font-size:12px;
+    min-height:25px;
+    outline:0;
+    padding:5px;
+    background-color:#efefef;
+}
+.QLineEdit:!focus
+{
+    font-size:13px;
+}
+.QValidatedLineEdit:disabled, .QLineEdit:disabled 
+{
+    background-color:#efefef;
+}
+/****************************/
+QPushButton 
+{ /* Global Button Style */
+    background-color:#ffd952;
+    border:0;
+    border-radius: 5px;
+    color: #3b3b3c;
+    font-size:13px;
+    font-weight:normal;
+    width: 200px;
+    height: 30px;
+    /*padding-left:25px;
+    padding-right:25px;
+    padding-top:5px;
+    padding-bottom:5px;*/
+    margin: 0;
+}
+QPushButton:hover 
+{
+    background-color:#ffd952;
+    border:1px #3b3b3c solid;
+}
+QPushButton:focus 
+{
+    border:none;
+    outline:none;
+}   
+
+QPushButton:pressed 
+{
+    border:0px solid #333;
+}
+QDialog#SendCoinsDialog .QFrame#frameCoinControl 
+{ /* Coin Control Section */
+
+}
+QDialog#SendCoinsDialog .QPushButton#sendButton 
+{ /* Send Button */
+    background-color:#ffd952;
 }
