@@ -138,3 +138,26 @@ QDialog#SendCoinsDialog .QPushButton#sendButton
 { /* Send Button */
     background-color:#ffd952;
 }
+QDialog#SendCoinsDialog .QPushButton#clearButton
+{
+    /* Clear Button */
+    background: none;
+    border: 1px black solid;
+}
+QDialog#SendCoinsDialog .QPushButton#addButton
+{
+    /* Add Button */
+    background: none;
+    border: 1px black solid;
+}
+/* Widget de recibir */
+QWidget#ReceiveCoinsDialog .QFrame#frame2 QPushButton#clearButton
+{
+    background: none;
+    border: 1px black solid;
+}
+/*QWidget#ReceiveCoinsDialog .QFrame#frame QPushButton#showRequestButton
+{
+    background: none;
+    border: 1px black solid;
+}*/
