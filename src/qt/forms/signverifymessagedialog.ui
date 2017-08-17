@@ -14,7 +14,7 @@
    <string>Signatures - Sign / Verify a Message</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: rgb(0, 115, 255);</string>
+   <string notr="true"/>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -67,7 +67,7 @@
             <string>Choose previously used address</string>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(59, 59, 60);</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string/>
@@ -90,7 +90,7 @@
             <string>Paste address from clipboard</string>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(59, 59, 60);</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string/>
