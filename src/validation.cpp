@@ -35,6 +35,7 @@
 #include "validationinterface.h"
 #include "versionbits.h"
 #include "warnings.h"
+#include "addrdb.h"
 
 #include <atomic>
 #include <sstream>
@@ -65,6 +66,7 @@ int nScriptCheckThreads = 0;
 std::atomic_bool fImporting(false);
 bool fReindex = false;
 bool fTxIndex = false;
+bool fAddressIndex = false;
 bool fHavePruned = false;
 bool fPruneMode = false;
 bool fIsBareMultisigStd = DEFAULT_PERMIT_BAREMULTISIG;
@@ -77,6 +79,8 @@ int64_t nMaxTipAge = DEFAULT_MAX_TIP_AGE;
 bool fEnableReplacement = DEFAULT_ENABLE_REPLACEMENT;
 
 uint256 hashAssumeValid;
+
+CAddressDB* addressDb = new CAddressDB();
 
 CFeeRate minRelayTxFee = CFeeRate(DEFAULT_MIN_RELAY_TX_FEE);
 CAmount maxTxFee = DEFAULT_TRANSACTION_MAXFEE;
@@ -1224,25 +1228,25 @@ bool IsInitialBlockDownload()
 
     LOCK(cs_main);
     if (latchToFalse.load(std::memory_order_relaxed)) {
-	error("IsInitialBlockDownload: latchToFalse, false");
+	//error("IsInitialBlockDownload: latchToFalse, false");
         return false;
     }
     if (fImporting || fReindex) {
-	error("IsInitialBlockDownload: fImporting || fReindex, true");
+	//error("IsInitialBlockDownload: fImporting || fReindex, true");
         return true;
     }
     if (chainActive.Tip() == NULL) {
-	error("IsInitialBlockDownload: chainActive.Tip() == NULL, true");
+	//error("IsInitialBlockDownload: chainActive.Tip() == NULL, true");
         return true;
     }
     if (chainActive.Tip()->nChainWork < UintToArith256(chainParams.GetConsensus().nMinimumChainWork)) {
-	error("IsInitialBlockDownload: nChainWork < nMinimumChainWork, true");
+	//error("IsInitialBlockDownload: nChainWork < nMinimumChainWork, true");
         return true;
     }
     
     //Check MAX_TIP_AGE only in mainnet
     if (Params().NetworkIDString() == "main" && chainActive.Tip()->GetBlockTime() < (GetTime() - nMaxTipAge)) {
-        error("IsInitialBlockDownload: GetBlockTime() < (GetTime() - nMaxTipAge), true");
+        //error("IsInitialBlockDownload: GetBlockTime() < (GetTime() - nMaxTipAge), true");
         return true;
     }
     
@@ -1974,6 +1978,11 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                              tx.GetHash().ToString(), FormatStateMessage(state));
             control.Add(vChecks);
         }
+        
+        if (fAddressIndex) {
+            //const CBlock& block = *pblock;
+            addressDb->UpdateBalance(tx);
+        }
 
         CTxUndo undoDummy;
         if (i > 0) {
@@ -2021,10 +2030,12 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         setDirtyBlockIndex.insert(pindex);
     }
 
-    if (fTxIndex)
-        if (!pblocktree->WriteTxIndex(vPos))
+    if (fTxIndex) {
+        if (!pblocktree->WriteTxIndex(vPos)) {
             return AbortNode(state, "Failed to write transaction index");
-
+        }
+    }
+    
     // add this block to the view's block chain
     view.SetBestBlock(pindex->GetBlockHash());
 
@@ -2606,7 +2617,7 @@ bool ActivateBestChain(CValidationState &state, const CChainParams& chainparams,
     if (!FlushStateToDisk(state, FLUSH_STATE_PERIODIC)) {
         return false;
     }
-
+    
     return true;
 }
 
@@ -2793,7 +2804,7 @@ bool ReceivedBlockTransactions(const CBlock &block, CValidationState& state, CBl
             mapBlocksUnlinked.insert(std::make_pair(pindexNew->pprev, pindexNew));
         }
     }
-
+    
     return true;
 }
 
@@ -2938,10 +2949,12 @@ bool CheckBlock(const CBlock& block, CValidationState& state, const Consensus::P
             return state.DoS(100, false, REJECT_INVALID, "bad-cb-multiple", false, "more than one coinbase");
 
     // Check transactions
-    for (const auto& tx : block.vtx)
-        if (!CheckTransaction(*tx, state, false))
-            return state.Invalid(false, state.GetRejectCode(), state.GetRejectReason(),
+    for (const auto& tx : block.vtx) {
+        if (!CheckTransaction(*tx, state, false)) {
+                        return state.Invalid(false, state.GetRejectCode(), state.GetRejectReason(),
                                  strprintf("Transaction check failed (tx hash %s) %s", tx->GetHash().ToString(), state.GetDebugMessage()));
+        }        
+    }
 
     unsigned int nSigOps = 0;
     for (const auto& tx : block.vtx)
@@ -3293,7 +3306,7 @@ static bool AcceptBlock(const std::shared_ptr<const CBlock>& pblock, CValidation
 
     if (fCheckForPruning)
         FlushStateToDisk(state, FLUSH_STATE_NONE); // we just allocated more disk space for block files
-
+    
     return true;
 }
 
@@ -3325,7 +3338,7 @@ bool ProcessNewBlock(const CChainParams& chainparams, const std::shared_ptr<cons
     CValidationState state; // Only used to report errors, not invalidity - ignore it
     if (!ActivateBestChain(state, chainparams, pblock))
         return error("%s: ActivateBestChain failed", __func__);
-
+ 
     return true;
 }
 
@@ -3899,11 +3912,15 @@ bool InitBlockIndex(const CChainParams& chainparams)
     if (chainActive.Genesis() != NULL)
         return true;
 
+    fAddressIndex = GetBoolArg("-addressindex", DEFAULT_ADDRESSINDEX);
+    pblocktree->WriteFlag("addressindex", fAddressIndex);
+    LogPrintf("Initializing address index...\n");
+    
     // Use the provided setting for -txindex in the new database
-    fTxIndex = GetBoolArg("-txindex", DEFAULT_TXINDEX);
+    fTxIndex = GetBoolArg("-txindex", fAddressIndex ? fAddressIndex : DEFAULT_TXINDEX);
     pblocktree->WriteFlag("txindex", fTxIndex);
     LogPrintf("Initializing databases...\n");
-
+    
     // Only add the genesis block if not reindexing (in which case we reuse the one already on disk)
     if (!fReindex) {
         try {
@@ -3924,7 +3941,7 @@ bool InitBlockIndex(const CChainParams& chainparams)
         } catch (const std::runtime_error& e) {
             return error("LoadBlockIndex(): failed to initialize block database: %s", e.what());
         }
-    }
+    };
 
     return true;
 }
