@@ -3063,8 +3063,8 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
     }
     
     //Check if block is not accept for swap
-    if (block.GetBlockTime() > SWAP_TIMESTAMP) {
-        return state.Invalid(false, REJECT_INVALID, "time-too-new", "block timestamp not compliance with Crea 2.0 swap");
+    if (block.GetBlockTime() > SWAP_TIMESTAMP || GetAdjustedTime() > SWAP_TIMESTAMP ) {
+        return state.Invalid(false, REJECT_INVALID, "time-after-swap", "block not compliance with Crea 2.0 swap");
     }
 
     // Reject outdated version blocks when 95% (75% on testnet) of the network has upgraded:

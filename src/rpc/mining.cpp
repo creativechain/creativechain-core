@@ -323,6 +323,11 @@ std::string gbt_vb_name(const Consensus::DeploymentPos pos) {
 
 UniValue getblocktemplate(const JSONRPCRequest& request)
 {
+    int64_t time = GetAdjustedTime();
+    if (time > SWAP_TIMESTAMP) {
+        throw runtime_error ("ERROR: Crea 2.0 SWAP Enabled. No new blocks wiil be acccepted.");
+    }
+    
     if (request.fHelp || request.params.size() > 1)
         throw runtime_error(
             "getblocktemplate ( TemplateRequest )\n"
