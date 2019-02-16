@@ -19,6 +19,9 @@ static const int64_t MAX_BLOCK_SIGOPS_COST = 80000;
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
 static const int COINBASE_MATURITY = 8;
 
+/** Timestamp for Crea 2.0 SWAP | 19/02/2019 12:00:00 CET | Blocks after this date will not be accepted*/
+//static const int SWAP_TIMESTAMP = 1550574000;
+static const int SWAP_TIMESTAMP = 1550351040;
 /** Flags for nSequence and nLockTime locks */
 enum {
     /* Interpret sequence numbers as relative lock-time constraints. */
