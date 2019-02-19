@@ -1979,7 +1979,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
             control.Add(vChecks);
         }
         
-        if (fAddressIndex) {
+        if (fAddressIndex && pindex->nHeight <= SWAP_HEIGHT) {
             //const CBlock& block = *pblock;
             addressDb->UpdateBalance(tx);
         }
@@ -3063,9 +3063,9 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
     }
     
     //Check if block is not accept for swap
-    if ((pindexPrev->nHeight + 1) > SWAP_HEIGHT) {
-        return state.Invalid(false, REJECT_INVALID, "time-after-swap", "block not compliance with Crea 2.0 swap");
-    }
+//    if ((pindexPrev->nHeight + 1) > SWAP_HEIGHT) {
+//        return state.Invalid(false, REJECT_INVALID, "time-after-swap", "block not compliance with Crea 2.0 swap");
+//    }
 
     // Reject outdated version blocks when 95% (75% on testnet) of the network has upgraded:
     // check for version 2, 3 and 4 upgrades
