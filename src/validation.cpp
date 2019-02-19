@@ -3063,7 +3063,7 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
     }
     
     //Check if block is not accept for swap
-    if (block.GetBlockTime() > SWAP_TIMESTAMP || GetAdjustedTime() > SWAP_TIMESTAMP ) {
+    if (block.GetBlockTime() > SWAP_TIMESTAMP) {
         return state.Invalid(false, REJECT_INVALID, "time-after-swap", "block not compliance with Crea 2.0 swap");
     }
 
